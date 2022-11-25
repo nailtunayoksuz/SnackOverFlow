@@ -34,6 +34,8 @@
 		796E7E67292F843700C8556E /* OnBoardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796E7E66292F843700C8556E /* OnBoardModel.swift */; };
 		796E7E6A29314C0700C8556E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796E7E6929314C0700C8556E /* LoginView.swift */; };
 		796E7E6D2931542600C8556E /* TextFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796E7E6C2931542600C8556E /* TextFieldModifier.swift */; };
+		796E7E6F29315F8600C8556E /* OnBoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796E7E6E29315F8600C8556E /* OnBoardViewModel.swift */; };
+		796E7E72293160F200C8556E /* UserCacheItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796E7E71293160F200C8556E /* UserCacheItems.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +67,8 @@
 		796E7E66292F843700C8556E /* OnBoardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardModel.swift; sourceTree = "<group>"; };
 		796E7E6929314C0700C8556E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		796E7E6C2931542600C8556E /* TextFieldModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldModifier.swift; sourceTree = "<group>"; };
+		796E7E6E29315F8600C8556E /* OnBoardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardViewModel.swift; sourceTree = "<group>"; };
+		796E7E71293160F200C8556E /* UserCacheItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCacheItems.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +123,7 @@
 		796E7E2B292EA57400C8556E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				796E7E70293160E200C8556E /* Cache */,
 				796E7E6B2931540500C8556E /* ViewModifier */,
 				796E7E5C292EBD4800C8556E /* Fonts */,
 				796E7E45292EB41600C8556E /* Local */,
@@ -252,6 +257,7 @@
 			children = (
 				796E7E62292EBFE800C8556E /* OnBoardView.swift */,
 				796E7E66292F843700C8556E /* OnBoardModel.swift */,
+				796E7E6E29315F8600C8556E /* OnBoardViewModel.swift */,
 			);
 			path = OnBoard;
 			sourceTree = "<group>";
@@ -270,6 +276,14 @@
 				796E7E6C2931542600C8556E /* TextFieldModifier.swift */,
 			);
 			path = ViewModifier;
+			sourceTree = "<group>";
+		};
+		796E7E70293160E200C8556E /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				796E7E71293160F200C8556E /* UserCacheItems.swift */,
+			);
+			path = Cache;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,6 +368,7 @@
 				796E7E59292EBC2800C8556E /* ViewSize.swift in Sources */,
 				796E7E40292EADD700C8556E /* Icons.swift in Sources */,
 				796E7E63292EBFE800C8556E /* OnBoardView.swift in Sources */,
+				796E7E6F29315F8600C8556E /* OnBoardViewModel.swift in Sources */,
 				796E7E4E292EB67F00C8556E /* GoogleButton.swift in Sources */,
 				796E7E44292EB2D600C8556E /* FacebookButton.swift in Sources */,
 				796E7E65292EC20C00C8556E /* NormalButton.swift in Sources */,
@@ -364,6 +379,7 @@
 				796E7E32292EA5FD00C8556E /* WelcomeView.swift in Sources */,
 				796E7E1E292EA4EC00C8556E /* SnackOverFlowApp.swift in Sources */,
 				796E7E54292EB9FE00C8556E /* Radius.swift in Sources */,
+				796E7E72293160F200C8556E /* UserCacheItems.swift in Sources */,
 				796E7E5E292EBD5900C8556E /* FontSizes.swift in Sources */,
 				796E7E6D2931542600C8556E /* TextFieldModifier.swift in Sources */,
 				796E7E67292F843700C8556E /* OnBoardModel.swift in Sources */,

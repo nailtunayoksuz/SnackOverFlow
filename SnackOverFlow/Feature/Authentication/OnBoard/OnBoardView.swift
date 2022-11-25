@@ -8,34 +8,45 @@
 import SwiftUI
 
 struct OnBoardView: View {
-    @State var currentIndex : Int = 0
+    @StateObject var onBoardViewModel = OnBoardViewModel()
     var body: some View {
-        GeometryReader { geometry in
-            VStack{
-                Spacer()
-                TabView(selection: $currentIndex, content: {
-                   
-                    ForEach(OnBoardModel.items.indices,id: \.self) { value in
-                        SliderCard(imageHeight: geometry.dh(height: 0.45),model: OnBoardModel.items[value])
-                    }
-                })
-                .tabViewStyle(.page(indexDisplayMode: .never))
-                
-                Spacer()
-                Spacer()
-                HStack{
-                   
-                    ForEach(OnBoardModel.items.indices,id: \.self) { index in
-                        IndicatorRectangle(width: currentIndex == index ? geometry.dw(width: 0.06) : geometry.dw(width: 0.03))
-                            
-                    }
-                }
-                .frame(height: 6)
-                
-                NormalButton(onTap: {
+        NavigationView {
+            GeometryReader { geometry in
+                VStack{
+                    Spacer()
+                    TabView(selection: $onBoardViewModel.currentIndex, content: {
+                       
+                        ForEach(OnBoardModel.items.indices,id: \.self) { value in
+                            SliderCard(imageHeight: geometry.dh(height: 0.45),model: OnBoardModel.items[value])
+                        }
+                    })
+                    .tabViewStyle(.page(indexDisplayMode: .never))
                     
-                }, title: LocalKeys.Buttons.getStarted.rawValue)
-                .padding(.all,PagePadding.All.normal.rawValue)
+                    Spacer()
+                    Spacer()
+                    HStack{
+                        ForEach(OnBoardModel.items.indices,id: \.self) { index in
+                            IndicatorRectangle(width: onBoardViewModel.currentIndex == index ? geometry.dw(width: 0.06) : geometry.dw(width: 0.03))
+                                
+                        }
+                    }
+                    .frame(height: 6)
+                    
+                    NavigationLink(isActive: $onBoardViewModel.isHomeRedirect) {
+                        WelcomeView()
+                            .ignoresSafeArea()
+                            .navigationBarBackButtonHidden()
+                    } label: {
+                        NormalButton(onTap: {
+                            onBoardViewModel.saveUserLoginAndRedirect()
+                        }, title: LocalKeys.Buttons.getStarted.rawValue)
+                        .padding(.all,PagePadding.All.normal.rawValue)
+                    }.onAppear{
+                        onBoardViewModel.checkUserFirstTime()
+                    }
+
+
+                }
             }
         }
        
